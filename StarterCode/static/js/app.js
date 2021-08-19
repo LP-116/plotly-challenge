@@ -19,10 +19,19 @@ function displaygraph() {
 
     d3.json("samples.json").then((data) => {
 
-        var otu = data.samples[0].otu_ids;
+        var idSelect =  d3.select("#selDataset").property("value");
+        console.log(idSelect);
+
+        var idInfo = data.samples;
+
+        var idMatch = idInfo.find(element => element.id === idSelect);
+
+        console.log(idMatch);
+
+        var otu = idMatch.otu_ids;
         console.log(otu);
 
-        var values = data.samples[0].sample_values;
+        var values = idMatch.sample_values;
         console.log(values);
 
         var trace1 = {
