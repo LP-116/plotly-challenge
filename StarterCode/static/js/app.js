@@ -1,8 +1,19 @@
-// function unpack(rows, index) {
-//     return rows.map(function(row) {
-//         return row[index];
-//     });
-// }
+d3.json("samples.json").then((item) => {
+
+    var dropdownMenu = d3.select("#selDataset");
+
+    var dropdownNames = item.names;
+    console.log(dropdownNames);
+
+    dropdownNames.forEach((item) => {
+      dropdownMenu
+        .append("option")
+        .text(item)
+        .property("value", item);
+    });
+
+});
+
 
 function displaygraph() {
 
