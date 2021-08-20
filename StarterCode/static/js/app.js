@@ -38,6 +38,9 @@ function displaygraph() {
         var values = idMatch.sample_values;
         console.log(values);
 
+        var textLabels = idMatch.otu_labels;
+        // console.log(textLabels);
+
         var top10_otu = otu.slice(0,10).reverse();
         console.log(top10_otu);
 
@@ -52,7 +55,7 @@ function displaygraph() {
         var trace1 = {
             x: top10_values,
             y: reformat_top10_otu,
-            text: top10_otu,
+            text: textLabels,
             type: "bar",
             orientation: 'h',
             name: "Test"
@@ -77,8 +80,9 @@ function displaygraph() {
             marker: {
                 size: values,
                 color: otu,
-                colorscale: 'RdBu'
-              }
+                colorscale: 'Portland'
+              },
+            text: textLabels
         };
 
         var data2 = [trace2];
