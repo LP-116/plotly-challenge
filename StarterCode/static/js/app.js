@@ -14,9 +14,9 @@ d3.json("samples.json").then((item) => {
 
 });
 
-var filterDropdown = d3.select("#selDataset");
-
-filterDropdown.on("change", displaygraph);
+function optionChanged() {
+    displaygraph();
+}
 
 
 function displaygraph() {
@@ -67,6 +67,30 @@ function displaygraph() {
         };
 
         Plotly.newPlot("bar", data, layout);
+
+
+
+        var trace2 = {
+            x: otu,
+            y: values,
+            mode: "markers",
+            marker: {
+                size: values,
+                color: otu,
+              }
+        };
+
+        var data2 = [trace2];
+
+        var layout2 = {
+            title: "Samples Bubble Graph",
+            xaxis: { title: "OTU ID" },
+            height: 600,
+            width: 1000
+        };
+
+        Plotly.newPlot('bubble', data2, layout2)
+
 
     });
 };
