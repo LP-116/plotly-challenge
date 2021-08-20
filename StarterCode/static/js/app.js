@@ -14,9 +14,6 @@ d3.json("samples.json").then((item) => {
 
 });
 
-function optionChanged() {
-    displaygraph();
-}
 
 
 function displaygraph() {
@@ -96,8 +93,40 @@ function displaygraph() {
 
         Plotly.newPlot('bubble', data2, layout2)
 
-
     });
 };
 
 displaygraph();
+
+function displayMetadata() {
+
+    d3.json("samples.json").then((data) => {
+
+        var idSelect =  d3.select("#selDataset").property("value");
+        console.log(idSelect);
+        
+        var meta_idInfo = data.metadata;
+
+        var meta_idMatch = meta_idInfo.find(element => element.id === parseInt(idSelect, 10));
+        console.log(meta_idMatch);
+
+        var infoBox = d3.select("#sample-metadata");
+
+        infoBox.html("");
+
+        Object.entries(meta_idMatch).forEach((item) => {
+        infoBox
+            .append("div")
+            .text(item[0] + ": " + item[1]);
+
+        });
+    });
+};
+
+displayMetadata(); 
+
+
+function optionChanged() {
+    displaygraph(),
+    displayMetadata();
+}
