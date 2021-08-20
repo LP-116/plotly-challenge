@@ -77,6 +77,7 @@ function displaygraph() {
             marker: {
                 size: values,
                 color: otu,
+                colorscale: 'RdBu'
               }
         };
 
