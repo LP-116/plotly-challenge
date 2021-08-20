@@ -96,7 +96,7 @@ function displaygraph() {
     });
 };
 
-displaygraph();
+// displaygraph();
 
 function displayMetadata() {
 
@@ -116,15 +116,37 @@ function displayMetadata() {
 
         Object.entries(meta_idMatch).forEach((item) => {
         infoBox
-            .append("div")
+            .append("h5")
             .text(item[0] + ": " + item[1]);
 
         });
     });
 };
 
-displayMetadata(); 
+// displayMetadata(); 
 
+function washingGuage() {
+
+    d3.json("samples.json").then((data) => {
+
+        var idSelect =  d3.select("#selDataset").property("value");
+        console.log(idSelect);
+        
+        var meta_idInfo = data.metadata;
+
+        var meta_idMatch = meta_idInfo.find(element => element.id === parseInt(idSelect, 10));
+        console.log(meta_idMatch);
+
+        var washFreq = meta_idMatch.wfreq
+        console.log(washFreq);
+
+        
+
+
+    });
+};
+
+washingGuage();
 
 function optionChanged() {
     displaygraph(),
