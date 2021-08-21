@@ -63,7 +63,9 @@ function displaygraph() {
         var layout = {
             xaxis: { title: "Value" },
             yaxis: { title: "ID"},
-            margin: { t: 30, l: 150 }
+            title: "Top 10 Bacteria Cultures Found",
+            margin: { t: 30, l: 150 },
+            height: 600,
         };
 
         Plotly.newPlot("bar", data, layout);
@@ -172,7 +174,7 @@ function washingGuage() {
             }
           ];
           
-          var layout = { width: 450, height: 350 };
+          var layout = { width: 275, height: 250, margin: { t: 20, r: 25, l: 25, b: 25 } };
           Plotly.newPlot("gauge", data, layout);
 
 
