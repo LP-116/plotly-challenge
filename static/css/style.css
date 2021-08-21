@@ -65,7 +65,7 @@ hr {border-top: 3px double !important;}
 
 .glow {
     font-size: 60px;
-    color: #ccffff;
+    color: white;
     text-align: center;
     -webkit-animation: glow 2s ease-in-out infinite alternate;
     -moz-animation: glow 2s ease-in-out infinite alternate;
@@ -74,7 +74,7 @@ hr {border-top: 3px double !important;}
   
   @-webkit-keyframes glow {
     from {
-      text-shadow: 0 0 10px #6666ff, 0 0 20px #6666ff, 0 0 30px #80bfff, 0 0 40px #80bfff, 0 0 50px #80bfff, 0 0 60px #80bfff, 0 0 70px #80bfff;
+      text-shadow: 0 0 10px #6666ff, 0 0 20px #1a1aff, 0 0 30px #80bfff, 0 0 40px #80bfff, 0 0 50px #80bfff, 0 0 60px #80bfff, 0 0 70px #80bfff;
     }
     to {
       text-shadow: 0 0 20px #6666ff, 0 0 30px #1a1aff, 0 0 40px #1a1aff, 0 0 50px #1a1aff, 0 0 60px #1a1aff, 0 0 70px #1a1aff, 0 0 80px #1a1aff;
