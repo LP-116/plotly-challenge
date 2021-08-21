@@ -1,0 +1,18 @@
+body {background-color: #b3e0ff}
+
+.jumbotron {
+    background-image: url("../images/bacteria.jpg");
+    background-size: cover;
+    color:navy;
+    font-size: 20px !important ;
+
+}
+
+.jumbotron h1{
+    font-weight: 800;
+    }
+
+.jumbotron p{
+    font-weight: 500;
+    color: black
+}
