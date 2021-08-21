@@ -36,8 +36,7 @@ function displaygraph() {
         console.log(values);
 
         var textLabels = idMatch.otu_labels;
-        // console.log(textLabels);
-
+        
         var top10_otu = otu.slice(0,10).reverse();
         console.log(top10_otu);
 
@@ -56,7 +55,7 @@ function displaygraph() {
             type: "bar",
             orientation: 'h',
             marker: {
-                color: 'rgb(142,124,195)'
+                color: "CornflowerBlue"
               }
         };
 
@@ -65,11 +64,10 @@ function displaygraph() {
         var layout = {
             title: "Top 10 Bacteria Cultures Found",
             margin: { t: 30, l: 150 },
-            height: 600,
+            height: 650,
         };
 
         Plotly.newPlot("bar", data, layout);
-
 
 
         var trace2 = {
@@ -118,7 +116,7 @@ function displayMetadata() {
 
         Object.entries(meta_idMatch).forEach((item) => {
         infoBox
-            .append("h5")
+            .append("h4")
             .text(item[0] + ": " + item[1]);
 
         });
