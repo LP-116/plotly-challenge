@@ -3,6 +3,7 @@
     background-size: cover;
     color:navy;
     font-size: 20px !important ;
+    margin-bottom: 10px
 
 }
 
@@ -56,4 +57,8 @@ hr {border-top: 3px double !important;}
 
 .well h2{
     color:white;
+}
+
+#icon {
+    object-fit: contain;
 }
