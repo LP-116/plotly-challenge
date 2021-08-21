@@ -55,14 +55,14 @@ function displaygraph() {
             text: textLabels,
             type: "bar",
             orientation: 'h',
-            name: "Test"
+            marker: {
+                color: 'rgb(142,124,195)'
+              }
         };
 
         var data = [trace1];
 
         var layout = {
-            xaxis: { title: "Value" },
-            yaxis: { title: "ID"},
             title: "Top 10 Bacteria Cultures Found",
             margin: { t: 30, l: 150 },
             height: 600,
@@ -87,7 +87,7 @@ function displaygraph() {
         var data2 = [trace2];
 
         var layout2 = {
-            title: "Samples Bubble Graph",
+            title: "Bacteria Cultures Per Sample",
             xaxis: { title: "OTU ID" },
             height: 600,
             width: 1000

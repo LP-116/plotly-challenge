@@ -35,3 +35,19 @@ grid-item {
 
 hr {border-top: 3px double !important;}
 
+#selDataset {
+    font-size: medium;
+}
+
+.panel-heading {
+    background-color:darkslateblue;
+    color: white;
+}
+
+.panel-body {
+    background-color: #f3e6ff;
+}
+
+.panel {
+    border-color: black;
+}
