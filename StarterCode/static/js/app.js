@@ -96,7 +96,7 @@ function displaygraph() {
     });
 };
 
-// displaygraph();
+displaygraph();
 
 function displayMetadata() {
 
@@ -123,7 +123,7 @@ function displayMetadata() {
     });
 };
 
-// displayMetadata(); 
+displayMetadata(); 
 
 function washingGuage() {
 
@@ -140,7 +140,41 @@ function washingGuage() {
         var washFreq = meta_idMatch.wfreq
         console.log(washFreq);
 
-        
+
+        var data = [
+            {
+              domain: { x: [0, 1], y: [0, 1] },
+              value: washFreq,
+              title: { text: "Scrubs per Week" },
+              type: "indicator",
+              mode: "gauge+number",
+              delta: { reference: 9 },
+              gauge: {
+                axis: { range: [null, 9], tick0: 0, dtick: 1 },
+                bar: { color: "#007acc" },
+                steps: [
+                  { range: [0, 1], color: "#f2e6ff" },
+                  { range: [1, 2], color: "#d9b3ff" },
+                  { range: [2, 3], color: "#cc99ff" },
+                  { range: [3, 4], color: "#bf80ff" },
+                  { range: [4, 5], color: "#a64dff" },
+                  { range: [5, 6], color: "#8c1aff" },
+                  { range: [6, 7], color: "#7300e6" },
+                  { range: [7, 8], color: "#5900b3" },
+                  { range: [8, 9], color: "#26004d" }
+                ],
+                threshold: {
+                  line: { color: "red", width: 4 },
+                  thickness: 0.75,
+                  value: washFreq
+                }
+              }
+            }
+          ];
+          
+          var layout = { width: 450, height: 350 };
+          Plotly.newPlot("gauge", data, layout);
+
 
 
     });
@@ -150,5 +184,6 @@ washingGuage();
 
 function optionChanged() {
     displaygraph(),
-    displayMetadata();
+    displayMetadata()
+    washingGuage();
 }
