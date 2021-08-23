@@ -1,4 +1,4 @@
-// This function runs when the page is initialised.
+// Th init() function runs when the page is initialised.
 // The function builds up the drop down selection box with the names (ID's) from the json file.
 // Once the dropdown list is populated, the functions that build the graphs are run.
 
