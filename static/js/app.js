@@ -20,7 +20,7 @@ function init() {
 
         displaygraph();
         displayMetadata();
-        washingGuage();
+        washingGauge();
 
     });
 };
@@ -31,7 +31,7 @@ function init() {
 function optionChanged() {
     displaygraph(),
     displayMetadata()
-    washingGuage();
+    washingGauge();
 }
 
 
@@ -131,8 +131,8 @@ function capitalLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  
 
+// Similarly to how the data was extracted above, the below extracts the metadata.
 function displayMetadata() {
 
     d3.json("samples.json").then((data) => {
@@ -145,10 +145,13 @@ function displayMetadata() {
         var meta_idMatch = meta_idInfo.find(element => element.id === parseInt(idSelect, 10));
         console.log(meta_idMatch);
 
+        // Once values are extracted, we select the metadata ID section from the html.
         var infoBox = d3.select("#sample-metadata");
 
+        // Next the current contents of the metadata info box is cleared.
         infoBox.html("");
 
+        // Now the metadata details are added into the box.
         Object.entries(meta_idMatch).forEach(([key, value]) => {
         infoBox
             .append("h4")
@@ -159,7 +162,9 @@ function displayMetadata() {
 };
 
 
-function washingGuage() {
+// This function generated the washing frequency gauge.
+// As per above, it starts by extracting the data required to generate the gauge.
+function washingGauge() {
 
     d3.json("samples.json").then((data) => {
 
@@ -175,6 +180,7 @@ function washingGuage() {
         console.log(washFreq);
 
 
+        // Here the gauge is generated with 9 pointers and a color scheme.
         var data = [
             {
               domain: { x: [0, 1], y: [0, 1] },
@@ -210,9 +216,8 @@ function washingGuage() {
           Plotly.newPlot("gauge", data, layout);
 
 
-
     });
 };
 
-
+// Upon loading the page, the init() function is deployed to extract the drop down ID's, generate the graphs and populate the metadata.
 init();
