@@ -17,8 +17,8 @@
 The metadata panel, graphs and washing gauge were successfully generated and can be changed by using the dropdown selection.
 
 
-<img src="![belly button image](https://user-images.githubusercontent.com/82348616/130385110-a318fcf3-9759-48cd-88f6-314566220dfa.PNG)" width="700">
-<img src="![bubble graph](https://user-images.githubusercontent.com/82348616/130385128-ca9de3bc-c6ed-49e6-ade7-6e4688de550a.PNG" width="700">)
+<img src="https://user-images.githubusercontent.com/82348616/130385110-a318fcf3-9759-48cd-88f6-314566220dfa.PNG" width="700">
+<img src="https://user-images.githubusercontent.com/82348616/130385128-ca9de3bc-c6ed-49e6-ade7-6e4688de550a.PNG" width="700">)
 
 
 The dashboard has been published on github and can be accessed [here](https://lp-116.github.io/plotly-challenge/).
