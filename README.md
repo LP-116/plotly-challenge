@@ -18,7 +18,6 @@ After an initial investigation of the data, the first step was determining where
 Data extracted from the json file includes:
 * The names (ID's) to populate the dropdown menu.
 * From the samples section:
-
       * the otu_ids (used as the y axis in the horizontal bar graph and used as the x axis and markers in the bubble graphs)
       * the sample_values (used in the bar and bubble graphs)
       * the otu_labels (used as the hover over lable in the bar and bubble graphs)
