@@ -72,13 +72,14 @@ Contained in this repository are the below folders/files:
 
 * The glowing text feature in the heading:
 
-https://www.w3schools.com/howto/howto_css_glowing_text.asp
+    https://www.w3schools.com/howto/howto_css_glowing_text.asp
 
 * The background bacteria image:
-https://www.nutraingredients.com/Article/2019/10/04/Gut-health-affected-by-teams-of-bacteria-not-individual-species
+
+    https://www.nutraingredients.com/Article/2019/10/04/Gut-health-affected-by-teams-of-bacteria-not-individual-species
 
 * The magnifying glass image:
 
-https://www.vectorstock.com/royalty-free-vector/bacteria-and-virus-under-magnifying-glass-vector-11181296
+    https://www.vectorstock.com/royalty-free-vector/bacteria-and-virus-under-magnifying-glass-vector-11181296
 
 
