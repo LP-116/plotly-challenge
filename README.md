@@ -18,10 +18,12 @@ After an initial investigation of the data, the first step was determining where
 Data extracted from the json file includes:
 * The names (ID's) to populate the dropdown menu.
 * From the samples section:
+
       * the otu_ids (used as the y axis in the horizontal bar graph and used as the x axis and markers in the bubble graphs)
       * the sample_values (used in the bar and bubble graphs)
       * the otu_labels (used as the hover over lable in the bar and bubble graphs)
       * Note: for the bar graph, the data was sliced to get the top 10 results and then the data was reversed for plotting purposes.
+ 
 * The metadata to populate the panel card.
 * The washing frequency from the metadata section.
 
