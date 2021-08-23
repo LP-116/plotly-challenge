@@ -1,18 +1,32 @@
-d3.json("samples.json").then((item) => {
+function init() {
 
-    var dropdownMenu = d3.select("#selDataset");
+    d3.json("samples.json").then((item) => {
 
-    var dropdownNames = item.names;
-    console.log(dropdownNames);
+        var dropdownMenu = d3.select("#selDataset");
 
-    dropdownNames.forEach((item) => {
-      dropdownMenu
-        .append("option")
-        .text(item)
-        .property("value", item);
+        var dropdownNames = item.names;
+        console.log(dropdownNames);
+
+        dropdownNames.forEach((item) => {
+        dropdownMenu
+            .append("option")
+            .text(item)
+            .property("value", item);
+        });
+
+        displaygraph();
+        displayMetadata();
+        washingGuage();
+
     });
+};
 
-});
+
+function optionChanged() {
+    displaygraph(),
+    displayMetadata()
+    washingGuage();
+}
 
 
 
@@ -96,7 +110,6 @@ function displaygraph() {
     });
 };
 
-displaygraph();
 
 function capitalLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -127,7 +140,6 @@ function displayMetadata() {
     });
 };
 
-displayMetadata(); 
 
 function washingGuage() {
 
@@ -184,10 +196,5 @@ function washingGuage() {
     });
 };
 
-washingGuage();
 
-function optionChanged() {
-    displaygraph(),
-    displayMetadata()
-    washingGuage();
-}
+init();
