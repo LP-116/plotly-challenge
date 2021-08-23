@@ -77,6 +77,7 @@ function displaygraph() {
 
 
         // Now the bar graph is generated.
+        // Note that the config option is set to true so that the graphs are responsive on different sized screens.
         var trace1 = {
             x: top10_values,
             y: reformat_top10_otu,
@@ -90,16 +91,19 @@ function displaygraph() {
 
         var data = [trace1];
 
+        var config = {responsive: true};
+
         var layout = {
             title: "Top 10 Bacteria Cultures Found",
             margin: { t: 30, l: 150 },
             height: 650,
         };
 
-        Plotly.newPlot("bar", data, layout);
+        Plotly.newPlot("bar", data, layout, config);
 
 
         // Now the bubble graph is generated.
+        // Note that the config option is set to true so that the graphs are responsive on different sized screens.
         var trace2 = {
             x: otu,
             y: values,
@@ -114,6 +118,9 @@ function displaygraph() {
 
         var data2 = [trace2];
 
+        var config = {responsive: true};
+
+
         var layout2 = {
             title: "Bacteria Cultures Per Sample",
             xaxis: { title: "OTU ID" },
@@ -121,7 +128,7 @@ function displaygraph() {
             width: 1000
         };
 
-        Plotly.newPlot('bubble', data2, layout2)
+        Plotly.newPlot('bubble', data2, layout2, config)
 
     });
 };
@@ -164,6 +171,8 @@ function displayMetadata() {
 
 // This function generated the washing frequency gauge.
 // As per above, it starts by extracting the data required to generate the gauge.
+// Note that the config option is set to true so that the graphs are responsive on different sized screens.
+
 function washingGauge() {
 
     d3.json("samples.json").then((data) => {
@@ -212,8 +221,10 @@ function washingGauge() {
             }
           ];
           
+          var config = {responsive: true};
+
           var layout = { width: 275, height: 250, margin: { t: 20, r: 25, l: 25, b: 25 } };
-          Plotly.newPlot("gauge", data, layout);
+          Plotly.newPlot("gauge", data, layout, config);
 
 
     });
