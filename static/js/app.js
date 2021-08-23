@@ -1,3 +1,7 @@
+// This function runs when the page is initialised.
+// The function builds up the drop down selection box with the names (ID's) from the json file.
+// Once the dropdown list is populated, the functions that build the graphs are run.
+
 function init() {
 
     d3.json("samples.json").then((item) => {
@@ -21,6 +25,8 @@ function init() {
     });
 };
 
+// This function controls what happens when the dropdown selection is completed.
+// Once the selection is changed, all graph building functions and the metadata function are run.
 
 function optionChanged() {
     displaygraph(),
@@ -29,18 +35,23 @@ function optionChanged() {
 }
 
 
+// This function contains the code to build the bar chart and the bubble graph.
 
 function displaygraph() {
 
     d3.json("samples.json").then((data) => {
 
+        // First the value of the drop down box is determined.
         var idSelect =  d3.select("#selDataset").property("value");
         console.log(idSelect);
+
+        // Next the info we need to build the graph is extracted.
+        // The dropdown selection is matched to the ID in the samples section of the json data.
+        // Once the data is filtered down to the ID match, the otu_ids, values and labels are extracted.
 
         var idInfo = data.samples;
 
         var idMatch = idInfo.find(element => element.id === idSelect);
-
         console.log(idMatch);
 
         var otu = idMatch.otu_ids;
@@ -51,17 +62,21 @@ function displaygraph() {
 
         var textLabels = idMatch.otu_labels;
         
+        // Here the top 10 ID's and values are extracted and the data is reversed for formatting purposes.
         var top10_otu = otu.slice(0,10).reverse();
         console.log(top10_otu);
 
+        var top10_values = values.slice(0,10).reverse();
+        console.log(top10_values);
+
+        // The labels are then reformatted and added to a new list to add the OTU prefix.
         var reformat_top10_otu = []
         top10_otu.forEach((label) => {
             reformat_top10_otu.push("OTU " + label);
         });
 
-        var top10_values = values.slice(0,10).reverse();
-        console.log(top10_values);
 
+        // Now the bar graph is generated.
         var trace1 = {
             x: top10_values,
             y: reformat_top10_otu,
@@ -84,6 +99,7 @@ function displaygraph() {
         Plotly.newPlot("bar", data, layout);
 
 
+        // Now the bubble graph is generated.
         var trace2 = {
             x: otu,
             y: values,
@@ -110,10 +126,12 @@ function displaygraph() {
     });
 };
 
-
+// This function turns the first letter in a string to a capital letter. This is used in the formatting of the metadata.
 function capitalLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+
+  
 
 function displayMetadata() {
 
