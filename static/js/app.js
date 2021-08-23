@@ -98,6 +98,10 @@ function displaygraph() {
 
 displaygraph();
 
+function capitalLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
 function displayMetadata() {
 
     d3.json("samples.json").then((data) => {
@@ -114,10 +118,10 @@ function displayMetadata() {
 
         infoBox.html("");
 
-        Object.entries(meta_idMatch).forEach((item) => {
+        Object.entries(meta_idMatch).forEach(([key, value]) => {
         infoBox
             .append("h4")
-            .text(item[0] + ": " + item[1]);
+            .text(capitalLetter(key) + ": " + value);
 
         });
     });
