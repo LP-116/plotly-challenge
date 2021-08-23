@@ -40,7 +40,7 @@ The gauge was also generated using Plotly and by defining the parameters. Specif
 
 * A displayGraph function that builds the bar and bubble graphs.
 * A displayMetadata function that builds the metadata panel.
-* A wahsingGauge function that builds the washing frequency gauge.
+* A washingGauge function that builds the washing frequency gauge.
 * A init function that builds the dropdown menu and runs the graphs and metadata function.
 * Note: the init function is run upon page initialisation.
 * An optionChanged function that controls the dropdown menu change. Each time the dropdown changes, the graph/metadata function are run.
