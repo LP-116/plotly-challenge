@@ -1,11 +1,11 @@
 # Plotly Challenge
-## Plot.ly Homework - Belly Button Biodiversity
+## Belly Button Biodiversity
 ## To view the Bellybutton Biodiversity dashboard click [here](https://lp-116.github.io/plotly-challenge/)
 
 ---
 ### Task
 
-For this assignment we were required to build an interactive dashboard to explore a Belly Button Diversity dataset which is in json format.
+For this challenge we were required to build an interactive dashboard to explore a Belly Button Diversity dataset which is in json format.
 
 The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
 
